@@ -1,0 +1,93 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>GATE EXAM Marks Predicted by KALAM SARDAR</title>
+
+  <style>
+
+    h3 {color: red;}  /* CSS code for heading h3 */
+	h2{color:green;}
+      body {
+      background-image: url('static/images/world.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Oxstandhard Univercity Banner-->
+  <div>
+    <img src="static\images\GATE EXAM.jpeg" class="w3-border w3-padding" alt="GATE EXAM" style="width:100%">
+  </div>
+
+ 
+ 
+ <div class="login">
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+	<h2>%%%%GATE EXAM Marks Predicted by KALAM SARDAR%%%%%</h2>
+	 <h3>Choose Your Department For GATE Exam</h3>
+    <div>
+    <select>
+    <option value="" disabled="disabled" selected="selected">Choose Your Department For GATE Exam</option>
+    <option>Computer Science Engineering</option>
+    <option>Electronics and Communication Engineering</option>
+	<option>Electrical Engineering</option>
+	<option>Mechanical Engineering</option>
+	<option>Civil Engineering</option>
+</select> 
+    </div>
+	<h3>Enter Your Name</h3>
+	<input align="center" type="text"  placeholder="Enter Your Name" required="required" width="150" height="20"/>
+        <h3>Enter Your Study Hours to Predict Marks For GATE EXAM in 2022</h3>
+    	<input align="center" type="number" name="study_hours" placeholder="Study Hours Per Day" required="required" width="48" height="10"/>
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+       
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button>
+
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
