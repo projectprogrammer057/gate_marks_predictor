@@ -34,7 +34,7 @@ def predict():
     print(df)   
     df.to_csv('smp_data_from_app.csv')
 
-    return render_template('index.html', prediction_text='You will get [{}%] marks, when you do study [{}] hours per day '.format(output, int(features_value[0])))
+    return render_template('index.html', prediction_text='You will get [{}%] marks in GATE Exam, when you do study [{}] hours per day Regularly '.format(output, int(features_value[0])))
 
 
 if __name__ == "__main__":
